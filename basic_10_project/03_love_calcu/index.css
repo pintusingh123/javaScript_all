@@ -1,0 +1,75 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html,body{
+    height:100%;
+}
+
+/* Center layout */
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ff7d82,#fad0c4);
+}
+
+/* Card container */
+
+#parent{
+    background:white;
+    padding:40px 30px;
+    border-radius:12px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+    text-align:center;
+    width:300px;
+}
+
+/* Heading */
+
+#parent h1{
+    margin-bottom:25px;
+    color:#ff4d6d;
+}
+
+/* Form layout */
+
+form{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+/* Labels */
+
+label{
+    font-weight:bold;
+    text-align:left;
+}
+
+/* Inputs */
+
+input{
+    padding:8px;
+    border-radius:6px;
+    border:1px solid #ccc;
+    outline:none;
+}
+
+input:focus{
+    border-color:#ff4d6d;
+}
+
+/* Result */
+
+#result{
+    margin-top:20px;
+    color:#333;
+    font-size: 20px;
+    font-family: sans;
+    font-weight: 200;
+}

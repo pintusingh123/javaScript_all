@@ -1,0 +1,66 @@
+ *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    height:100%;
+    width:100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#parent{
+    height:100%;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: linear-gradient(135deg,#020406,#243b55);
+}
+
+/* Quote Card */
+
+#parent{
+    flex-direction:column;
+    gap:30px;
+}
+
+#quote{
+    max-width:600px;
+    text-align:center;
+    font-size:24px;
+    line-height:1.6;
+    padding:25px 35px;
+    background:rgb(223, 240, 253);
+    color:#333;
+    border-radius:12px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* Button Design */
+
+#btn{
+    padding:12px 25px;
+    font-size:16px;
+    border:none;
+    border-radius:8px;
+    background:#1e42c4;
+    color:white;
+    cursor:pointer;
+    transition:all 0.3s ease;
+}
+
+/* Hover Effect */
+
+#btn:hover{
+    background:#0e0334;
+    transform:scale(1.05);
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Click Effect */
+
+#btn:active{
+    transform:scale(0.95);
+}
