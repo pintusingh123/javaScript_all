@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="./index.js" defer></script>
+</head>
+
+<body>
+
+    <div class="bg-gray-100 min-h-screen flex items-center justify-center">
+        <!-- Card -->
+        <div class="bg-white w-full max-w-md p-8 rounded-xl shadow-lg">
+
+            <!-- Header -->
+            <div class="text-center mb-6">
+                <img src="./imgs/login.png" class="w-20 mx-auto mb-3" alt="Not Found">
+                <h2 class="text-2xl font-bold">Register for an Account</h2>
+                <p class="text-gray-500 text-sm">Simply fill out the form</p>
+            </div>
+
+            <!-- Form -->
+            <form class="space-y-4">
+                <div>
+                    <input oninput="resetValidation(this)" onblur="requiredValidation(this)" type="text" id="name"
+                        placeholder="Name"
+                        class="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                    <span class="animate__animated animate__bounceIn text-rose-600 text-sm hidden font-semibold mt-1">
+                        this field is required
+                    </span>
+                </div>
+
+                <div>
+                    <input oninput="resetValidation(this)" onblur="requiredValidation(this)" type="email" id="email"
+                        placeholder="E-Mail"
+                        class="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                    <span class="animate__animated animate__bounceIn text-rose-600 text-sm hidden font-semibold mt-1">
+                        this field is required
+                    </span>
+                </div>
+                <div>
+                    <input oninput="resetValidation(this)" onblur="requiredValidation(this)" type="password"
+                        id="password" placeholder="Password"
+                        class="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                    <span class="animate__animated animate__bounceIn text-rose-600 text-sm hidden font-semibold mt-1">
+                        this field is required
+                    </span>
+                </div>
+                <div> <input oninput="resetValidation(this)" onblur="requiredValidation(this)" type="password"
+                        id="confirmPassword" placeholder="Confirm Password"
+                        class="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                    <span class="animate__animated animate__bounceIn text-rose-600 text-sm hidden font-semibold mt-1">
+                        this field is required
+                    </span>
+                </div>
+
+                <!-- Terms -->
+                <div class="flex items-center gap-2 text-sm">
+                    <input type="checkbox" id="terms">
+                    <label for="terms">I accept the Terms & Conditions</label>
+                </div>
+
+                <!-- Button -->
+                <button id="btn" class="w-full bg-gray-600 text-white py-2 rounded-md hover:bg-gray-800 transition">
+                    Create Account
+                </button>
+
+            </form>
+
+            <!-- Footer -->
+            <div class="text-center mt-6 text-sm">
+                <p class="text-gray-500">
+                    Already have an account?
+                    <a href="#" class="text-blue-600 font-semibold hover:underline">
+                        Sign in here
+                    </a>
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>
