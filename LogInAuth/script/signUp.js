@@ -22,9 +22,16 @@ function createUser(event) {
   const payload = JSON.stringify(userData);
 
   //for uniqeu key name so we use Date.now()=>
-  const key = Date.now();
+  const key = email; //email islye kyoki email har signup user ki agar agar hogi 
 
   localStorage.setItem(key, payload);
+
+
+// reset form data after submited 
+ const form = event.target
+//  console.log(form);
+ form.reset();
+ 
 
   Swal.fire({
     icon: "success",
@@ -34,10 +41,6 @@ function createUser(event) {
     timerProgressBar: true,
     showConfirmButton: false,
   });
- // reset form data after submited 
- const form = event.target
-//  console.log(form);
- form.reset();
  
 }
 
@@ -56,3 +59,19 @@ function validation(inputId, errorId) {
     label.classList.add("hidden");
   }
 }
+
+
+//show password funtinality => 
+  function showpasswordbtn(){
+    const input = document.getElementById("password")
+    const passwordicon = document.getElementById("eye-icon")
+
+   
+     if(input.type == "password"){
+      input.type = "text";
+      passwordicon.className = "ri-eye-off-line"
+     }else if(input.type == "text"){
+      input.type="password"
+      passwordicon.className="r-eye-line"
+     }
+  }
