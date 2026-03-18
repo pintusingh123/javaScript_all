@@ -1,3 +1,10 @@
+window.onload = () => {
+  const user = localStorage.getItem("isLogin");
+  if (user) {
+    window.location.replace("profile.html");
+  }
+};
+
 function createUser(event) {
   event.preventDefault(); //its imp for stop page reloading when we submit form
 
@@ -22,16 +29,13 @@ function createUser(event) {
   const payload = JSON.stringify(userData);
 
   //for uniqeu key name so we use Date.now()=>
-  const key = email; //email islye kyoki email har signup user ki agar agar hogi 
+  const key = email; //email islye kyoki email har signup user ki agar agar hogi
 
   localStorage.setItem(key, payload);
 
-
-// reset form data after submited 
- const form = event.target
-//  console.log(form);
- form.reset();
- 
+  // reset form data after submited
+  const form = event.target;
+  form.reset();
 
   Swal.fire({
     icon: "success",
@@ -41,7 +45,12 @@ function createUser(event) {
     timerProgressBar: true,
     showConfirmButton: false,
   });
- 
+
+  setTimeout(() => {
+    localStorage.setItem("isLogin", true);
+    localStorage.setItem("currentUser", email);
+    window.location.replace("profile.html");
+  }, 1000);
 }
 
 //input fields error sms fun
@@ -60,18 +69,16 @@ function validation(inputId, errorId) {
   }
 }
 
+//show password funtinality =>
+function showpasswordbtn() {
+  const input = document.getElementById("password");
+  const passwordicon = document.getElementById("eye-icon");
 
-//show password funtinality => 
-  function showpasswordbtn(){
-    const input = document.getElementById("password")
-    const passwordicon = document.getElementById("eye-icon")
-
-   
-     if(input.type == "password"){
-      input.type = "text";
-      passwordicon.className = "ri-eye-off-line"
-     }else if(input.type == "text"){
-      input.type="password"
-      passwordicon.className="r-eye-line"
-     }
+  if (input.type == "password") {
+    input.type = "text";
+    passwordicon.className = "ri-eye-off-line";
+  } else if (input.type == "text") {
+    input.type = "password";
+    passwordicon.className = "ri-eye-line";
   }
+}

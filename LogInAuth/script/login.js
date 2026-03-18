@@ -1,3 +1,12 @@
+
+window.onload =()=>{
+  const user = localStorage.getItem("isLogin");
+  if(user){
+    window.location.replace("profile.html")
+  }
+}
+
+
 function loginUser(e) {
   e.preventDefault();
   validation("email", "email-error");
@@ -15,8 +24,7 @@ function loginUser(e) {
   if (user) {
     //agar user he to true agr user nahi hai to null return hoga aur condition false hogi
     const userOBj = JSON.parse(user);
-    //  console.log(userOBj);
-
+ 
      if(userOBj.password == password){
           //sab kuch sahi hone par  user data ko profile page pr bhejenge 
           //dedirect krenge using js
@@ -26,6 +34,9 @@ function loginUser(e) {
 
            //isliye ham ye use krenge => 
             window.location.replace("profile.html") 
+
+           localStorage.setItem("isLogin", true);
+           localStorage.setItem("currentUser", email);
         
      }else{
      passwordError.classList.remove('hidden')
